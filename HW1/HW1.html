@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="HW1.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <label for="numCols">Enter the number of columns:</label>
+        <input type="tel" id="numCols" name="numCols" maxlength="6" size="2"><br><br>
+        <label for="numRows">Enter the number of rows: </label>
+        <input type="tel" id="numRows" name="numRows" maxlength="6" size="2"><br><br>
+        <input onclick="create()" type="button" id="tSubmit" value="Create">
+        <input onclick="whiteOut()" type="button" id="tClear" value="Delete Table">
+    </form>
+
+    <br>
+    <br>
+
+    <table>
+        <thead id="tHead"></thead>
+        <tbody id="tBody"></tbody>
+    </table>
+
+</body>
+
+<script src="HW1.js"></script>
+
+</html>

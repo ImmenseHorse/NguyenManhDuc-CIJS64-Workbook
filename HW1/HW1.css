@@ -1,0 +1,22 @@
+table,
+th,
+td {
+    border: rgb(20, 17, 17) solid;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+#specialTh {
+    width: 1cm !important;
+    text-align: center;
+}
+
+th {
+    height: 20px;
+    width: 4cm;
+    font-weight: normal;
+    padding: 2px 2px;
+}
