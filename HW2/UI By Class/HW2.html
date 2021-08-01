@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="HW2.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="FAQ"></div>
+</body>
+
+<script src="./HW2.js"></script>
+<script>
+    const faq = document.getElementById('FAQ');
+
+    let obj = [];
+    const QA1 = new QandA("What kind of payment do you support?", "We accept credit cards, Paypal and Stripe");
+    obj.push(QA1);
+    const QA2 = new QandA("Do you support free delivery?", "Free shipping is available for any order with total value more than $100");
+    obj.push(QA2);
+    const QA3 = new QandA("What's your warranty policy?", "While sale-off items should not be returned, all remaining items may be returned within 10 days of purchase, provided that the returning items meet our satisfying-quality-standard");
+    obj.push(QA3);
+
+    faq.appendChild(QA1.render());
+    faq.appendChild(QA2.render());
+    faq.appendChild(QA3.render());
+
+    const manageButton = (tagName) => {
+        var btList = document.getElementsByTagName(tagName);
+        for (let i in btList) {
+            let domButton = btList[i];
+            if (domButton.innerHTML === '+') {
+                domButton.removeEventListener('click', () => {
+                    obj[i].hideAnswer();
+                    manageButton(tagName);
+                });
+
+                domButton.addEventListener('click', () => {
+                    obj[i].displayAnswer();
+                    manageButton(tagName);
+                });
+
+            } else if (domButton.innerHTML === '-') {
+                domButton.removeEventListener('click', () => {
+                    obj[i].displayAnswer();
+                    manageButton(tagName);
+                });
+
+                domButton.addEventListener('click', () => {
+                    obj[i].hideAnswer();
+                    manageButton(tagName);
+                });
+            }
+        }
+
+    }
+
+    manageButton('button');
+</script>
+
+</html>
